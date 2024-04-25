@@ -1,0 +1,383 @@
+:root {
+    --grey-1: #f9fafb; /*header, projects, announcements, trends*/
+    --grey-2: #d1d5db; /*project bg*/
+    --blue-1: #1e3a8a; /*nav, buttons*/
+    --red-1: #881337; /*color blocks*/
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+button, 
+input {
+    color: inherit;
+    font: inherit;
+}
+
+button {
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* BODY */
+
+body {
+    background: var(--grey-2);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+/*------------HEADER----------*/
+
+.header {
+    background-color: var(--grey-1);
+    grid-column: 2 / 5;
+    padding: 1.5rem 3rem;
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.top-half {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+}
+
+.search label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    font-size: 1.5rem;
+}
+
+.search-container > #search-field {
+    display: inline-block;
+    border: 0;
+    background-color: var(--grey-2);
+    outline-color: var(--blue-1);
+    padding: 8px 2em;
+    margin-left: 1rem;
+    border-radius: 25px;
+    width: min(80%, 700px);
+}
+
+.header .profile-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.fa-bell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+.fa-bell:active {
+    transform: scale(0.9);
+}
+
+.profile-container .profile-pic {
+    margin: 0 1rem 0 2rem;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.profile-pic:active {
+    transform: scale(0.9);
+}
+
+.bottom-half {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-div {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic-big {
+    width: 80px;
+    height: 80px;
+}
+
+.welcome-container .hello {
+    display: flex;
+    font-weight: 700;
+}
+
+
+.welcome-container .main-user-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-button {
+    background-color: var(--blue-1);
+    color: var(--grey-1);
+    font-weight: 500;
+    padding: 0.6rem 2.3rem;
+    border-radius: 25px;
+    transition: transform 200ms ease-in-out 0ms
+}
+
+.header-button:hover {
+    transform: scale(1.05);
+}
+
+/*----------SIDEBAR------------*/
+
+.sidebar {
+    background-color: var(--blue-1);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: 1.75rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--grey-1);
+}
+
+.fa-compact-disc {
+    margin-right: 0.5rem;
+}
+
+ul {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1.5rem;
+    font-weight: 500;
+    color: var(--grey-1);
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+li > i {
+    margin-right: 1.2rem;
+}
+
+/*------NAV ANIMATION-------*/
+
+li > p {
+    transition: transform 500ms ease-out;
+}
+
+li > p:hover {
+    transform: translateX(10px);
+}
+
+
+
+/*------------CONTENT-------------*/
+
+.content {
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
+    background-color: var(--grey-2);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 2rem;
+    overflow: auto;
+}
+
+.content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.project {
+    background-color: var(--grey-1);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 250ms ease-in-out 0ms;
+}
+
+.project:hover {
+    transform: scale(1.02)
+}
+
+.project-text {
+    color: grey;
+}
+
+.projects .project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 350px;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.projects .project {
+    border-left: 10px solid var(--red-1);
+    display: flex;
+    flex-direction: column;
+}
+
+.projects .project-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.projects .project-text {
+    /*--CUTS OFF EXCESS TEXT, MAKES'...'*/
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.action-block {
+    margin-top: auto;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.action-block > i {
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.action-block > i:active {
+    transform: scale(0.9);
+}
+
+/*-------ANNOUNCEMENTS-------*/
+
+.announcement {
+    width: 25ch;
+    padding: 1rem 0;
+}
+
+.announcement:first-child {
+    padding-top: 0;
+}
+
+.announcement:last-child {
+    padding-bottom: 0;
+}
+
+.announcement h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.announcement p {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.announcement + .announcement {
+    border-top: var(--grey-2) 1px solid;
+}
+
+.announcements {
+    background-color: var(--grey-1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+.announcement > p {
+    color: grey;
+}
+/*-------TRENDING----------*/
+
+.trending {
+    background-color: var(--grey-1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.trend + .trend {
+    margin-top: 1.5rem;
+}
+
+.trend > img {
+    width: 45px;
+    height: 45px;
+}
+
+.trend-tag {
+    display: flex;
+    font-weight: 500;
+}
+
+.trend-text {
+    font-size: 0.9rem;
+    color: grey;
+}
+.trending-pealkiri {
+    margin-top: 20px;
+}
